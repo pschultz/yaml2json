@@ -24,8 +24,12 @@ func main() {
 Convert the yaml contents of FILENAME to json and print it on stdout. If
 FILENAME is '-' or omitted, stdin is read instead.
 
+The input is read completely before re-encoding begins. Multiple yaml documents
+in the input are also not supported. %s is thus of limited use in streaming
+pipelines.
+
 OPTIONS:
-`, prog)
+`, prog, prog)
 		flag.PrintDefaults()
 	}
 
