@@ -1,0 +1,19 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "r1CX8/M/ipvntOfH0rT9jOQ6fdM=",
+			"path": "github.com/cloudfoundry-incubator/candiedyaml",
+			"revision": "99c3df83b51532e3615f851d8c2dbb638f5313bf",
+			"revisionTime": "2016-04-29T08:01:25Z"
+		},
+		{
+			"checksumSHA1": "l2w6jertyAzSdcdKIXnHm02X8Jk=",
+			"path": "github.com/ghodss/yaml",
+			"revision": "aa0c862057666179de291b67d9f093d12b5a8473",
+			"revisionTime": "2016-06-04T00:29:25Z"
+		}
+	],
+	"rootPath": "github.com/pschultz/yaml2json"
+}
