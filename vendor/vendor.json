@@ -9,10 +9,16 @@
 			"revisionTime": "2016-04-29T08:01:25Z"
 		},
 		{
-			"checksumSHA1": "l2w6jertyAzSdcdKIXnHm02X8Jk=",
+			"checksumSHA1": "ImX1uv6O09ggFeBPUJJ2nu7MPSA=",
 			"path": "github.com/ghodss/yaml",
-			"revision": "aa0c862057666179de291b67d9f093d12b5a8473",
-			"revisionTime": "2016-06-04T00:29:25Z"
+			"revision": "0ca9ea5df5451ffdf184b4428c902747c2c11cd7",
+			"revisionTime": "2017-03-27T23:54:44Z"
+		},
+		{
+			"checksumSHA1": "fALlQNY1fM99NesfLJ50KguWsio=",
+			"path": "gopkg.in/yaml.v2",
+			"revision": "cd8b52f8269e0feb286dfeef29f8fe4d5b397e0b",
+			"revisionTime": "2017-04-07T17:21:22Z"
 		}
 	],
 	"rootPath": "github.com/pschultz/yaml2json"
