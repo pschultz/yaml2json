@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -33,7 +34,8 @@ OPTIONS:
 		flag.PrintDefaults()
 	}
 
-	compact := flag.Bool("c", false, "Print compact instead of pretty json.")
+	compact := false
+	flag.BoolVar(&compact, "c", false, "Print compact instead of pretty json.")
 
 	flag.Parse()
 	args := flag.Args()
@@ -47,13 +49,15 @@ OPTIONS:
 	b, err = yaml.YAMLToJSON(b)
 	check(err)
 
-	if !*compact {
-		b, err = makePretty(b)
-		check(err)
+	if compact {
+		os.Stdout.Write(append(b, '\n'))
+		return
 	}
 
-	os.Stdout.Write(b)
-	os.Stdout.Write([]byte{'\n'})
+	b, err = makePretty(b)
+	check(err)
+
+	os.Stdout.Write(append(b, '\n'))
 }
 
 func readInput(args []string) ([]byte, error) {
@@ -71,10 +75,7 @@ func check(err error) {
 }
 
 func makePretty(b []byte) ([]byte, error) {
-	var doc *json.RawMessage
-	if err := json.Unmarshal(b, &doc); err != nil {
-		return b, err
-	}
-
-	return json.MarshalIndent(doc, "", "  ")
+	buf := &bytes.Buffer{}
+	err := json.Indent(buf, b, "", "  ")
+	return buf.Bytes(), err
 }
