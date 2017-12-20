@@ -22,10 +22,10 @@ func main() {
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, `Usage: %s <OPTIONS> <FILENAME>
 
-Convert the yaml contents of FILENAME to json and print it on stdout. If
+Convert the YAML contents of FILENAME to JSON and print it on stdout. If
 FILENAME is '-' or omitted, stdin is read instead.
 
-The input is read completely before re-encoding begins. Multiple yaml documents
+The input is read completely before re-encoding begins. Multiple YAML documents
 in the input are also not supported. %s is thus of limited use in streaming
 pipelines.
 
@@ -35,12 +35,12 @@ OPTIONS:
 	}
 
 	compact := false
-	flag.BoolVar(&compact, "c", false, "Print compact instead of pretty json.")
+	flag.BoolVar(&compact, "c", false, "Print compact instead of pretty JSON.")
 
 	flag.Parse()
 	args := flag.Args()
 	if len(args) > 1 {
-		log.Fatalf("expected at most one argument; the name of a yaml file")
+		log.Fatalf("Expected at most one argument; the name of a YAML file")
 	}
 
 	b, err := readInput(args)
